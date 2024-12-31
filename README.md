@@ -12,9 +12,9 @@ A highly customizable and easy-to-use virtual joystick plugin for Godot, perfect
 
 ## Quick Start
 
-1. **Activate the plugin** in your Godot project.
-2. **Add a new node** to your scene.
-3. **Search for and select "VersatileMobileJoystick"**.
+1. **Download** the plugin from the AssetLib.
+2. **Search for joystick.tscn**.
+3. **Drag and drop on wny scene you want**.
 4. **Customize the joystick properties** in the Inspector panel.
 
 ## Configuration Options
@@ -59,8 +59,8 @@ Here's a simple example of how to read input from the joystick in your game logi
 
 ```gdscript
 func _process(delta: float) -> void:
-    direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down", 0)
-    position += direction * speed * delta
+	direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down", 0)
+	position += direction * speed * delta
 ```
 
 ## 🤝 How to Contribute

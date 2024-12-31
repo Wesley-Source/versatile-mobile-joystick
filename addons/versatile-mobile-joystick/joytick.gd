@@ -1,7 +1,6 @@
 @tool
 @icon("res://addons/versatile-mobile-joystick/JoystickNodeIcon.png")
 extends Node2D
-class_name VersatileMobileJoystick
 
 # Joystick modes
 enum JoystickMode {
@@ -112,10 +111,6 @@ var being_touched: bool = false:
 			if visibility_mode == VisibilityMode.WHEN_TOUCHED:
 				%Joystick.hide()
 
-func _enter_tree() -> void:
-	tip_texture = load("res://addons/versatile-mobile-joystick/default_textures/TipJoystickTest.png")
-	base_texture = load("res://addons/versatile-mobile-joystick/default_textures/BaseJoystickTest.png")
-
 # Initial setup
 func _ready() -> void:
 	if not Engine.is_editor_hint():
@@ -124,6 +119,11 @@ func _ready() -> void:
 		else:
 			%Joystick.show()
 
+func _update_tip_texture(texture : Texture2D) -> void:
+	tip_texture = texture
+	%Tip.texture = tip_texture
+	if Engine.is_editor_hint():
+		print("Tip texture updated")
 # Configuration warnings in editor
 func _get_configuration_warnings() -> PackedStringArray:
 	var warnings: PackedStringArray = []
@@ -138,6 +138,8 @@ func _get_configuration_warnings() -> PackedStringArray:
 		"Deadzone Circle": deadzone_circle,
 		"Tip Limit Circle": tip_limit_circle,
 		"Touch Detection Region": touch_detection_region,
+		"Base Texture": base_texture,
+		"Tip Texture": tip_texture
 	}
 	
 	# Add warnings for undefined settings
