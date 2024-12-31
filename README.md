@@ -63,21 +63,22 @@ func _process(delta: float) -> void:
 	position += direction * speed * delta
 ```
 
-## 🤝 How to Contribute
+## How to Contribute
 
 We encourage contributions from the community! If you have ideas, bug fixes, or enhancements, please:
 
-- **Submit issues** to report bugs or suggest features on our [GitHub repository](https://github.com/MarcoFazioRandom/Virtual-Joystick-Godot).
+- **Submit issues** to report bugs or suggest features on our [GitHub repository](https://github.com/Wesley-Source/versatile-mobile-joystick).
 - **Create pull requests** with your code changes. We appreciate:
 
   - **Clear commit messages** explaining your changes.
   - **Tests** to ensure your code works as intended.
   - **Documentation updates** if your changes impact existing documentation.
 
-## 📄 Licensing Information
+## Licensing Information
 
 This project is released under the **MIT License**. For detailed license terms, please review the [LICENSE](LICENSE) file included in the repository.
 
 ---
 
 **Crafted with ❤️ for the Godot community**
+**Inspired by MarcoFazioRandom**
