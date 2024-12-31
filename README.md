@@ -80,5 +80,4 @@ This project is released under the **MIT License**. For detailed license terms, 
 
 ---
 
-**Crafted with ❤️ for the Godot community**
-**Inspired by MarcoFazioRandom**
+**Inspired by MarcoFazioRandom own [Joystick](https://github.com/MarcoFazioRandom/Virtual-Joystick-Godot)**
