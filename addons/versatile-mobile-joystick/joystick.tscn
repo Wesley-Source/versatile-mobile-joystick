@@ -17,12 +17,6 @@ unique_name_in_owner = true
 [node name="Base" type="Sprite2D" parent="Joystick"]
 unique_name_in_owner = true
 
-[node name="BaseInitalPos" type="Marker2D" parent="Joystick"]
-unique_name_in_owner = true
-
-[node name="TipInitialPos" type="Marker2D" parent="Joystick"]
-unique_name_in_owner = true
-
 [node name="TouchDetectorIndicator" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2147483648

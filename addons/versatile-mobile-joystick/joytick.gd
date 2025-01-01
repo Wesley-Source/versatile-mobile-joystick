@@ -170,7 +170,7 @@ func _input(event: InputEvent) -> void:
 			# Touch end
 			being_touched = false
 			%Touch.disabled = true
-			%Tip.global_position = %TipInitialPos.global_position
+			%Tip.global_position = %Base.global_position
 			_update_input_actions(Vector2.ZERO)
 	
 	elif event is InputEventScreenDrag:
@@ -182,12 +182,12 @@ func _input(event: InputEvent) -> void:
 		else:
 			# Outside touch area
 			being_touched = false
-			%Tip.global_position = %TipInitialPos.global_position
+			%Tip.global_position = %Base.global_position
 			_update_input_actions(Vector2.ZERO)
 
 # Calculate joystick movement and strength
 func _move_and_calculate(event: InputEvent) -> void:
-	var t_init_pos: Vector2 = %TipInitialPos.global_position
+	var t_init_pos: Vector2 = %Base.global_position
 	var event_pos: Vector2 = event.position
 	var direction: Vector2 = t_init_pos.direction_to(event_pos)
 	var distance: float = t_init_pos.distance_to(event_pos)
@@ -204,13 +204,12 @@ func _move_and_calculate(event: InputEvent) -> void:
 	
 	# Normalize distance
 	var normalized_distance: float = clamped_distance / (max_distance - deadzone_length)
-	var normalized_cl_direction: Vector2 = direction * normalized_distance
 	
 	# Calculate output based on strength curve
 	var output: Vector2 = Vector2.ZERO
 	if normalized_distance > 0:
-		output.x = normalized_cl_direction.x * strength_curve.sample(abs(normalized_cl_direction.x))
-		output.y = normalized_cl_direction.y * strength_curve.sample(abs(normalized_cl_direction.y))
+		output.x = direction.x * strength_curve.sample(normalized_distance)
+		output.y = direction.y * strength_curve.sample(normalized_distance)
 	_update_input_actions(output)
 
 # Update input actions based on movement
