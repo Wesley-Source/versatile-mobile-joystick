@@ -21,8 +21,9 @@ A highly customizable and easy-to-use virtual joystick plugin for Godot, perfect
 
 1. **Download** the plugin from the AssetLib.
 2. **Search for joystick.tscn**.
-3. **Drag and drop on wny scene you want**.
+3. **Drag and drop on any scene you want**.
 4. **Customize the joystick properties** in the Inspector panel.
+5. **Alternatively, download the addons folder and add it to your project**.
 
 ## Configuration Options
 
