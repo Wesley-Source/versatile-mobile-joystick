@@ -1,6 +1,9 @@
 # Versatile Mobile Joystick for Godot
 
+<img src="git/banner.png" width="100%">
+
 A highly customizable and easy-to-use virtual joystick plugin for Godot, perfect for mobile game development.
+
 
 ## Features
 
@@ -9,6 +12,10 @@ A highly customizable and easy-to-use virtual joystick plugin for Godot, perfect
 - **Supports both fixed and dynamic positioning**: Choose how the joystick appears on screen.
 - **Adjustable visibility modes**: Control when the joystick is visible.
 - **Customizable input zones and responsiveness**: Fine-tune the joystick's behavior to enhance gameplay.
+  
+## Preview
+![dynamic](git/dynamic.gif)
+![fixed](git/fixed.gif)
 
 ## Quick Start
 
