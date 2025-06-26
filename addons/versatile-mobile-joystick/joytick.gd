@@ -96,6 +96,9 @@ enum VisibilityMode {
 ## Links the joystick's downward direction to this input action in the project settings.
 @export var down_movement: String = "ui_down"
 
+## Touch index to handle multitouch.
+var joystick_touch_index: int = -1
+
 # Touch state management
 var being_touched: bool = false:
 	set(value):
@@ -158,32 +161,33 @@ func _is_inside_touch_detector(pos: Vector2) -> bool:
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch:
 		# Touch start
-		%TouchIndicator.global_position = event.position
 		if event.pressed:
-			%Touch.disabled = false
 			if _is_inside_touch_detector(event.position):
+				joystick_touch_index = event.index
 				being_touched = true
+				%Touch.disabled = false
 				if joystick_mode == JoystickMode.DYNAMIC:
 					%Joystick.global_position = event.position
 				_move_and_calculate(event)
 		else:
-			# Touch end
-			being_touched = false
-			%Touch.disabled = true
-			%Tip.global_position = %Base.global_position
-			_update_input_actions(Vector2.ZERO)
+			# Only release if it's the same finger that started the joystick
+			if event.index == joystick_touch_index:
+				being_touched = false
+				%Touch.disabled = true
+				%Tip.global_position = %Base.global_position
+				_update_input_actions(Vector2.ZERO)
+				joystick_touch_index = -1
 	
 	elif event is InputEventScreenDrag:
 		# Touch drag
-		%TouchIndicator.global_position = event.position
-		if _is_inside_touch_detector(event.position):
-			being_touched = true
-			_move_and_calculate(event)
-		else:
-			# Outside touch area
-			being_touched = false
-			%Tip.global_position = %Base.global_position
-			_update_input_actions(Vector2.ZERO)
+		if event.index == joystick_touch_index:
+			if _is_inside_touch_detector(event.position):
+				being_touched = true
+				_move_and_calculate(event)
+			else:
+				being_touched = false
+				%Tip.global_position = %Base.global_position
+				_update_input_actions(Vector2.ZERO)
 
 # Calculate joystick movement and strength
 func _move_and_calculate(event: InputEvent) -> void:
