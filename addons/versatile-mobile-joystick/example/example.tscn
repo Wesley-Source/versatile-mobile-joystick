@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b3rjj1bmqtiok" path="res://addons/versatile-mobile-joystick/default_textures/BaseJoystickTest.png" id="2_f0lsj"]
 [ext_resource type="Texture2D" uid="uid://dlgmq4q7t23o8" path="res://addons/versatile-mobile-joystick/default_textures/TipJoystickTest.png" id="3_t7335"]
 [ext_resource type="Texture2D" uid="uid://cfjvo5mm7dug8" path="res://addons/versatile-mobile-joystick/JoystickNodeIcon.png" id="4_dvctb"]
-[ext_resource type="Script" path="res://addons/versatile-mobile-joystick/example/sprite_2d.gd" id="4_e3kxc"]
+[ext_resource type="Script" uid="uid://dlnfsmdue15k0" path="res://addons/versatile-mobile-joystick/example/sprite_2d.gd" id="4_e3kxc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kq3io"]
 radius = 8.2
