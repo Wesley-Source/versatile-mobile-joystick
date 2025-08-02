@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://btf0iccai10qr"]
 
-[ext_resource type="Script" uid="uid://lcsb24etxvyb" path="res://addons/versatile-mobile-joystick/joytick.gd" id="1_ofv6b"]
+[ext_resource type="Script" uid="uid://lcsb24etxvyb" path="res://addons/versatile-mobile-joystick/joystick.gd" id="1_ofv6b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_46m5w"]
 radius = 4.0
