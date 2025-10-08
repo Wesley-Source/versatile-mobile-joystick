@@ -4,7 +4,6 @@
 
 A highly customizable and easy-to-use virtual joystick plugin for Godot, perfect for mobile game development.
 
-
 ## Features
 
 - **Simple to implement**: Easy integration into your Godot project.
@@ -12,7 +11,7 @@ A highly customizable and easy-to-use virtual joystick plugin for Godot, perfect
 - **Supports both fixed and dynamic positioning**: Choose how the joystick appears on screen.
 - **Adjustable visibility modes**: Control when the joystick is visible.
 - **Customizable input zones and responsiveness**: Fine-tune the joystick's behavior to enhance gameplay.
-  
+
 ## Preview
 ![dynamic](git/dynamic.gif)
 ![fixed](git/fixed.gif)
@@ -23,7 +22,7 @@ A highly customizable and easy-to-use virtual joystick plugin for Godot, perfect
 2. **Search for joystick.tscn**.
 3. **Drag and drop on any scene you want**.
 4. **Customize the joystick properties** in the Inspector panel.
-5. **Alternatively, download the addons folder and add it to your project**.
+5. **Alternatively, go on the releases addons folder and add it to your project**.
 
 ## Configuration Options
 
@@ -35,6 +34,7 @@ Here are some of the key properties you can configure:
 |                   | `tip_texture`       | The movable part that follows touch input.                                  |
 | **Behavior**      | `joystick_mode`     | `FIXED` (stationary) or `DYNAMIC` (appears at touch location).              |
 |                   | `visibility_mode`   | `ALWAYS` visible or `WHEN_TOUCHED`.                                         |
+|                   | `is_mobile_only`    | If enabled, the joystick will only work on mobile devices.                 |
 | **Input Zones**   | `deadzone_circle`   | Central area where input is ignored.                                        |
 |                   | `tip_limit_circle`  | Maximum range of joystick movement.                                         |
 |                   | `touch_detection_region` | Area where touch input is detected.                             |
@@ -43,6 +43,18 @@ Here are some of the key properties you can configure:
 |                   | `right_movement`    | Action name for rightward movement.                                         |
 |                   | `up_movement`       | Action name for upward movement.                                            |
 |                   | `down_movement`     | Action name for downward movement.                                          |
+
+## Mobile-Only Feature
+
+The `is_mobile_only` export variable allows you to restrict the joystick functionality exclusively to mobile devices. When enabled:
+
+- On **mobile devices**: The joystick works normally
+- On **desktop/platforms**: The joystick will be completely disabled and invisible
+
+This is particularly useful when you want to:
+- Avoid showing virtual controls on desktop versions
+- Create platform-specific control schemes
+- Ensure desktop players use keyboard/gamepad without joystick interference
 
 ## Recommended Project Settings
 
@@ -60,6 +72,7 @@ These settings ensure proper touch input handling, especially when testing on de
 - Use the **DYNAMIC** joystick_mode for more flexible controls in different game scenarios.
 - Adjust the **deadzone_circle** to prevent unintended small movements.
 - Customize the **touch_detection_region** to create larger or smaller interactive areas.
+- Set **is_mobile_only** to *true* when joystick testing is done.
 
 ## Example Code
 

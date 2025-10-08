@@ -96,6 +96,12 @@ enum VisibilityMode {
 ## Links the joystick's downward direction to this input action in the project settings.
 @export var down_movement: String = "ui_down"
 
+## Option to use the joystick only on mobile devices
+@export var is_mobile_only: bool = false
+
+## List of names of know mobile operating systems
+var mobile_operating_systems = ["iOS", "Android"]
+
 ## Touch index to handle multitouch.
 var joystick_touch_index: int = -1
 
@@ -117,6 +123,9 @@ var being_touched: bool = false:
 # Initial setup
 func _ready() -> void:
 	if not Engine.is_editor_hint():
+		
+		if OS.get_name() not in mobile_operating_systems and is_mobile_only:
+			queue_free()
 		if visibility_mode == VisibilityMode.WHEN_TOUCHED:
 			%Joystick.hide()
 		else:
