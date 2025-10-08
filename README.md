@@ -19,10 +19,10 @@ A highly customizable and easy-to-use virtual joystick plugin for Godot, perfect
 ## Quick Start
 
 1. **Download** the plugin from the AssetLib.
-2. **Search for joystick.tscn**.
-3. **Drag and drop on any scene you want**.
-4. **Customize the joystick properties** in the Inspector panel.
-5. **Alternatively, download the latest release and extract it into your project**.
+2. **Alternatively, download the latest release and extract it into your project**
+3. **Search for joystick.tscn**.
+4. **Drag and drop on any scene you want**.
+5. **Customize the joystick properties** in the Inspector panel.
 
 ## Configuration Options
 
@@ -43,18 +43,6 @@ Here are some of the key properties you can configure:
 |                   | `right_movement`    | Action name for rightward movement.                                         |
 |                   | `up_movement`       | Action name for upward movement.                                            |
 |                   | `down_movement`     | Action name for downward movement.                                          |
-
-## Mobile-Only Feature
-
-The `is_mobile_only` export variable allows you to restrict the joystick functionality exclusively to mobile devices. When enabled:
-
-- On **mobile devices**: The joystick works normally
-- On **desktop/platforms**: The joystick will be completely disabled and invisible
-
-This is particularly useful when you want to:
-- Avoid showing virtual controls on desktop versions
-- Create platform-specific control schemes
-- Ensure desktop players use keyboard/gamepad without joystick interference
 
 ## Recommended Project Settings
 
