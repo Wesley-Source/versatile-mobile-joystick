@@ -80,8 +80,6 @@ We encourage contributions from the community! If you have ideas, bug fixes, or 
 - **Create pull requests** with your code changes. We appreciate:
 
   - **Clear commit messages** explaining your changes.
-  - **Tests** to ensure your code works as intended.
-  - **Documentation updates** if your changes impact existing documentation.
 
 ## Licensing Information
 
