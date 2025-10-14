@@ -18,7 +18,7 @@ A highly customizable and easy-to-use virtual joystick plugin for Godot, perfect
 
 ## Quick Start
 
-**Brazilians, watch the tutorial [video](https://www.youtube.com/watch?v=wMKgNilcSzU) i made**
+- **Brazilians can watch the portuguese tutorial [video](https://www.youtube.com/watch?v=wMKgNilcSzU)**
 
 1. **Download** the plugin from the AssetLib.
 2. **Alternatively, download the latest release and extract it into your project**
