@@ -7,7 +7,6 @@ radius = 4.0
 
 [node name="JoystickController" type="Node2D"]
 script = ExtResource("1_ofv6b")
-is_mobile_only = null
 
 [node name="Joystick" type="Node2D" parent="."]
 unique_name_in_owner = true
