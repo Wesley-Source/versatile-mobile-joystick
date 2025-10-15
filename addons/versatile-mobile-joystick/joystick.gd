@@ -170,7 +170,7 @@ func _is_inside_touch_detector(pos: Vector2) -> bool:
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch:
 		# Touch start
-		if event.pressed:
+		if event.pressed and not being_touched:
 			if _is_inside_touch_detector(event.position):
 				joystick_touch_index = event.index
 				being_touched = true
